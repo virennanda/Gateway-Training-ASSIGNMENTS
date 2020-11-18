@@ -93,6 +93,7 @@ flex-direction: column-reverse;
     display: flex;
     align-items: center;
     justify-content: center; 
+    transition-duration:0.7s ;
 }
 .service span{
     color: var(--secondary-text-color);
@@ -118,22 +119,32 @@ margin-bottom: 35px
     min-height:30vh; 
     display: flex;
     justify-content: space-between;
+
 }
 
 .client-logo{
     height: 100px;
     width: 150px;
     background-color: var(--secondary-bg-color);
+    transition-duration:0.7s ; 
 }
+.service:hover,.client-logo:hover{
+    background-color: var(--secondary-text-color);
+    transform: scale(1.2);
+}
+
 footer{
     min-height: 40vh;
     background-color: var(--secondary-bg-color);
-    padding:15px 20px; 
+    padding:15px 20px;
+    display: flex;
+    flex-direction: column; 
 }
 footer ul{
 list-style: none;
 display: flex;
 padding:10px 15px;
+
 }
 footer ul li{
     text-transform: uppercase;
@@ -164,8 +175,3 @@ footer .row-1,.row-2,.row-3{
     margin:5px;
   }
 }
-/*footer .left{
-display: flex;
-flex-direction: column;
-}
-*/
