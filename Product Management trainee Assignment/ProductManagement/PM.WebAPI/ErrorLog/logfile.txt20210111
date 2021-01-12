@@ -1,0 +1,3 @@
+2021-01-11 21:45:11,444 [6] ERROR PM.WebAPI.Controllers.ProductsController [(null)] - Attempted to divide by zero.
+System.DivideByZeroException: Attempted to divide by zero.
+   at PM.WebAPI.Controllers.ProductsController.GetProducts() in C:\Users\Nanda\source\repos\ProductManagement\PM.WebAPI\Controllers\ProductsController.cs:line 28
