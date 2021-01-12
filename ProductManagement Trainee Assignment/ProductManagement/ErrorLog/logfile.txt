@@ -1,0 +1,7 @@
+2021-01-12 10:24:14,931 [6] INFO  ProductManagement.Controllers.AccountController [(null)] - 12-01-2021 10:24:14 viren.nanda.01@gmail.com logged in successfully 
+2021-01-12 12:11:09,903 [50] INFO  ProductManagement.Controllers.AccountController [(null)] - 12-01-2021 12:11:09 viren.nanda.01@gmail.com logged in successfully 
+2021-01-12 12:22:04,877 [60] INFO  ProductManagement.Controllers.AccountController [(null)] - 12-01-2021 12:22:04 viren.nanda.01@gmail.com logged in successfully 
+2021-01-12 14:04:14,347 [12] INFO  ProductManagement.Controllers.AccountController [(null)] - 12-01-2021 14:04:14 viren.nanda.01@gmail.com logged in successfully 
+2021-01-12 14:27:46,877 [36] INFO  ProductManagement.Controllers.AccountController [(null)] - 12-01-2021 14:27:46 viren.nanda.01@gmail.com logged in successfully 
+2021-01-12 16:12:07,445 [35] INFO  ProductManagement.Controllers.AccountController [(null)] - 12-01-2021 16:12:07 viren.nanda.01@gmail.com Invalid Login Attempt 
+2021-01-12 16:12:21,321 [36] INFO  ProductManagement.Controllers.AccountController [(null)] - 12-01-2021 16:12:21 viren.nanda.01@gmail.com logged in successfully 

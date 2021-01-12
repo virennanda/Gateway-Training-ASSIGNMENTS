@@ -1,0 +1,147 @@
+﻿@model ProductManagement.ViewModels.ProductListViewModel
+
+@{
+    ViewBag.Title = "Product List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow-lg p-0">
+    @using (Html.BeginForm("DeleteMultiple", "Products", FormMethod.Post,new {id="ProductsDeleteForm"}))
+    {
+
+        <div class="card-header bg-dark text-light">
+            Product List
+        </div>
+    <div class="card-body">
+        <button type="button"
+                value="Delete"
+                class="btn btn-sm btn-danger rounded-0 m-2"
+                onclick="MultipleDelete()">
+            <i class="fas fa-trash"></i>
+            Delete All Selected
+        </button>
+        <div class="table-responsive">
+
+        <table class="table table-sm table-striped table-bordered" style="width:100%" id="ProductsTable" name="ProductsTable">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkBoxAll" class="custom-checkbox" /></th>
+                    <th>Product Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Short Description</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Select All</th>
+                    <th>Product Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Short Description</th>
+                    <th>Options</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var Product in Model.Products)
+                {
+                    <tr>
+                        <td><input type="checkbox" name="ID" value="@Product.Id" class="custom-checkbox chkCheckBoxId" /></td>
+                        <td>
+                            @if (!String.IsNullOrEmpty(Product.SmallImage))
+                            {
+                                <img src="@Url.Content(Product.SmallImage)" width="150" height="150" alt="@Product.Name" />
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/ProductImages/no_image-300x245.jpg")" width="150" height="150" alt="Not Available" />
+
+                            }
+                        </td>
+                        <td>@Product.Name</td>
+                        <td>@Product.Category.Name</td>
+                        <td>@Product.Price</td>
+                        <td>@Product.Quantity</td>
+                        <td>@Product.ShortDescription</td>
+                        <td>
+                            <a onclick="Delete(@Product.Id)" class="btn btn-danger btn-sm">
+                                Delete
+                            </a>
+                            <a href="@Url.Action("edit","products",new {id=Product.Id})" class="btn btn-info btn-sm">
+                                Edit
+                            </a>
+                            <a href="@Url.Action("Details","products",new {id=Product.Id})" class="btn btn-secondary btn-sm">
+                                View
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+        </div>
+    </div>
+    }
+</div>
+
+@section scripts
+{
+    <script>
+            $(function () {
+
+            let successMessage='@TempData["SuccessMessage"]';
+
+            let errorMessage='@TempData["ErrorMessage"]';
+
+                //on success
+                if (successMessage != '') {
+                    alertify.success(successMessage);
+                }
+                //on error
+                if (errorMessage != '') {
+                    alertify.error(errorMessage);
+                }
+            });
+        function Delete(id) {
+            alertify.confirm("Product Delete Conformation", "Do you want to delete this product ?", function () {
+            window.location.href='@Url.Action("Delete","Products")/'+id;
+            },null);
+
+        }
+        function MultipleDelete() {
+           
+            alertify.confirm("Product Delete Conformation", "Do you want to All selected Products ?", function () {
+            
+                $("#ProductsDeleteForm").submit();
+            },null);
+        }
+
+        $(document).ready(function () {
+
+            var table = $("table#ProductsTable").DataTable();
+
+        })
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#checkBoxAll').click(function () {
+                if ($(this).is(":checked")) {
+                    $(".chkCheckBoxId").prop("checked", true)
+                }
+                else {
+                    $(".chkCheckBoxId").prop("checked", false)
+                }
+            });
+        });
+    </script>
+}
+@section customStyles
+{
+ 
+}

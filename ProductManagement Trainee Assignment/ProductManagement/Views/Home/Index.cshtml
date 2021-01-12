@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="card shadow-lg">
+    <div class="card-header bg-dark text-light">
+        <h3>
+            Dashboard
+        </h3>
+
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col text-center">
+                <h3>
+                    Welcome
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <span>@User.Identity.Name</span>
+                    }
+                    else
+                    {
+                        <span>
+                            Guest
+                        </span>
+                    }
+
+                </h3>
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <p class="h5 alert alert-success">
+                        You have successfully logged In.<br />
+                        You Can Create , update , Or delete Products as You like  .
+                    </p>
+                }
+                else
+                {
+                    <p class="h5 alert alert-warning">
+                        As a Guest User You are not allowed Access to other options.<br />
+                        Please Register or Login to Continue  .
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
