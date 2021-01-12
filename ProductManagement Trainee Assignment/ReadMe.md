@@ -13,16 +13,16 @@ Login Page
 ![Alt text](screenshots/ss2Login.png)
 
 Dashboard :
-![Alt text](screenshots/ss3dashboard.png
+![Alt text](screenshots/ss3dashboard.png)
 
 All Products :
-![Alt text](screenshots/ss4Allproducts.png
+![Alt text](screenshots/ss4Allproducts.png)
 
 Edit Page:
-![Alt text](screenshots/ss5Edit.png
+![Alt text](screenshots/ss5Edit.png)
 
 Updated success notification :
-![Alt text](screenshots/ss6updateMessage.png
+![Alt text](screenshots/ss6updateMessage.png)
 
 Single Product display:
-![Alt text](screenshots/ss7ViewProduct.png
+![Alt text](screenshots/ss7ViewProduct.png)
